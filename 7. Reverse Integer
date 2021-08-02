@@ -1,0 +1,19 @@
+class Solution {
+    public int reverse(int x) {
+       StringBuilder sb=new StringBuilder(""+x);
+        sb.reverse();
+        String str=sb.toString();
+        if(str.charAt(str.length()-1)=='-'){
+            str='-' +str.substring(0,str.length()-1);
+        }
+        int reverse=0;
+        try{
+             reverse = Integer.parseInt(str);
+        }catch(Exception ex){
+            return 0;
+        }
+        return reverse;
+       
+        
+    }
+}
