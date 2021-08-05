@@ -1,0 +1,18 @@
+class Solution {
+    public String intToRoman(int num) {
+   String romans[] = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
+   int numbers[]={1,4,5,9,10,40,50,90,100,400,500,900,1000};
+    int num__size=numbers.length;
+    String ans="";
+    int index=num__size-1;
+    while(num>0){
+        while(numbers[index]<=num){
+            ans+=romans[index];
+            num-=numbers[index];
+        }
+        index--;
+    }
+        return ans;
+        
+    }
+}
