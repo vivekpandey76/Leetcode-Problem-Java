@@ -1,0 +1,41 @@
+class Solution {
+    
+    public static int numberInteger(char s){
+        switch(s){
+            case 'I': return 1;
+            case 'V':return 5;
+            case 'X':return 10;
+            case 'L':return 50;
+            case 'C':return 100;
+            case 'D':return 500;
+            case 'M':return 1000;
+            default:return -1;
+        }
+    }
+    
+    
+    public int romanToInt(String s) {
+       int n=s.length() ,result=0, i=0, next, current;
+        /*Traverse through string from left to right if we get next value greater then  
+        current then we minus the next with current and add it into result if current is greater then next then we simply add result to current*/
+        while(i<n){
+            if(i==n-1){
+                result+=numberInteger(s.charAt(i));
+                return result;
+            }
+            current=numberInteger(s.charAt(i));
+            next=numberInteger(s.charAt(i+1));
+            if(current>=next){
+                result+=current;
+                i++;
+            }else{
+                result+=next-current;
+                i+=2;
+            }
+                
+
+        }
+       return result;
+        
+    }
+}
