@@ -1,0 +1,18 @@
+Time complexity:0(n)
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        /*Traverse through each element of array and see whether the element is present is hashset or not it is not present simply add elemet and increment loop else return true element is repeated*/
+       int i=0,size=nums.length;
+       HashSet<Integer> hs=new HashSet();
+       while(i<size){
+           if(!hs.contains(nums[i])){
+               hs.add(nums[i]);
+               i++;
+           }else{
+               return true;
+           }
+       }
+        return false;
+    }
+}
