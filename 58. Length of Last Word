@@ -1,0 +1,18 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int size=s.length();
+        if(s==null || size==0) return 0;  //If string is empty then return 0 without going further
+        int count=0;
+        boolean flag=false;
+        for(int i=size-1;i>=0;i--){
+            char c=s.charAt(i);
+            if((c>='a' && c<='z') || (c>='A' && c<='Z')){
+                flag=true;
+                count++;
+            }else{
+                if(flag) return count;   //The count will return when the last word length is calculated cause then the flag will get set to true and charAt(i) will be blank
+            }
+        }
+        return count;
+    }
+}
