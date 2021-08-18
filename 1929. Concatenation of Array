@@ -21,8 +21,8 @@ class Solution{
             int size=nums.length;
             int newNums[]=new int[size*2]
             for(int i=0;i<size;i++){
-                 num[i]=num[i+len]=nums[i];
+                 newNums[i]=newNums[i+len]=nums[i];
             }
-            return num;
+            return newNums;
         }
 }
