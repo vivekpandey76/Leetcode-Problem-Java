@@ -14,3 +14,19 @@ public class Solution {
         return count;
     }
 }
+
+//Method 2
+
+public class Solution {
+    // you need to treat n as an unsigned value
+    public int hammingWeight(int n) {
+       int count=0;
+       //Unsigned value 
+       while(n!=0){
+           //Perform n & (n-1) it will simply convert least significant 1 bit into 0
+           n=n & (n-1);
+          count++;
+       } 
+        return count;
+    }
+}
