@@ -1,0 +1,16 @@
+class Solution {
+    public int countDigits(int num) {
+        int count=0,unitplace;
+        int temp = num;
+        while(num>0){
+            unitplace = num%10;
+                if(temp % unitplace==0){
+                count++;
+            }
+            num = num/10;
+            
+            
+        }
+        return count;
+    }
+}
