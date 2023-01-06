@@ -1,0 +1,21 @@
+class Solution {
+    //Step1:Traverse through array
+    //Step2: Check the no.of digits of each elements in the array 
+    //Step3: Check Whether the number is even or odd if it is even increment result
+    public int findNumbers(int[] nums) {
+        int element,result =0;
+        int size = nums.length;
+        for(int i=0;i<size;i++){
+            int count = 0;
+            element = nums[i];
+            while(element > 0){
+                count++;
+                element = element/10;
+            }
+            if(count%2 == 0){
+                result=result + 1;
+            }
+        }
+        return result;
+    }
+}
