@@ -1,0 +1,24 @@
+//Step1: Iterate through all rows
+//Step2: Iterate through each array i.e column
+//Step3: Do sums of element of each array i.e Column
+//Step4: Check the sums with the max_Profit which is initilly initilize to zero
+//Step5: if Max_profit is smaller then result then update max_Profit to sums value
+//Step6: After iterating whole row return max_Profit
+
+
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int rowSize = accounts.length;
+        int max_Profit = 0;
+        for(int row = 0;row<rowSize;row++){
+            int result = 0;
+            for(int col =0;col<accounts[row].length;col++){
+                result = result + accounts[row][col];
+            }
+            if(result > max_Profit){
+                max_Profit = result;
+            }
+        }
+        return max_Profit;
+    }
+}
